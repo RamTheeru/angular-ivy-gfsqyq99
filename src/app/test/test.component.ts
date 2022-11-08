@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -6,21 +6,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./test.component.css'],
 })
 export class TestComponent implements OnInit {
-  @Input('iv') ival: string = '';
-  @Output('t') tt = new EventEmitter<string>();
+  @Input('gd') getdata = '';
   val: string = '';
   isset: boolean = false;
   nums: number[] = [1, 2, 3, 4, 5];
   constructor() {}
 
   ngOnInit() {
-    this.val = this.ival;
+    //this.val = this.getdata;
     //this.isset = this.val != '';
   }
   oncheck() {
-    this.isset = this.ival != '';
-  }
-  test() {
-    this.tt.emit('go');
+    this.val = this.getdata;
+    //this.isset = this.ival != '';
   }
 }

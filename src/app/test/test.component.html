@@ -1,10 +1,17 @@
-<input type="text" [value]="ival" />
-<button (click)="test()">check data pass</button>
-<br />
-<p *ngIf="isset; else ab">Value passed successfully!!</p>
-<ng-template #ab>Value not passed successfully!!</ng-template>
-<div *ngIf="isset">
-  <div class="row" *ngFor="let n of nums">
-    <p>{{ n }}</p>
+<!-- <p *ngIf="isset; else ab">Value passed successfully!!</p>
+<ng-template #ab>Value not passed successfully!!</ng-template> -->
+<div class="container">
+  <div class="row">
+    <p>Getting value from Parent:</p>
+    <p class="text-success">{{ val }}</p>
+  </div>
+  <div class="row">
+    <button (click)="oncheck()" class="btn btn-primary">
+      check value from parent
+    </button>
+  </div>
+  <div class="row">
+    <label>Name:</label>
+    <input type="text" class="form-control" />
   </div>
 </div>

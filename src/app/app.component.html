@@ -1,5 +1,20 @@
-<hello name="{{ name }}"></hello>
-<p>Start editing to see some magic happen :)</p>
-<input type="text" value="" [(ngModel)]="name" />
-<input type="button" value="Pass" (click)="passbyclick()" />
-<app-test (t)="mycheck()" [iv]="testval"></app-test>
+<div class="container">
+  <div class="row">
+    <label>Display Name from Child:</label>
+    <input type="text" class="form-control" />
+    <button (click)="passbyclick()" class="btn btn-primary">
+      Pass Value to child
+    </button>
+  </div>
+  <div class="row">
+    <p *ngIf="ispassed; else t" class="text-info">
+      Data passing from parent to child.......
+    </p>
+    <ng-template #t>
+      <p class="text-warning">Data not yet passed to child</p>
+    </ng-template>
+  </div>
+  <div class="row">
+    <app-test [gd]="testval"></app-test>
+  </div>
+</div>
