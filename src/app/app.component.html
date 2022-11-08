@@ -1,0 +1,5 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<input type="text" value="" [(ngModel)]="name" />
+<input type="button" value="Pass" (click)="passbyclick()" />
+<app-test (t)="mycheck()" [iv]="testval"></app-test>

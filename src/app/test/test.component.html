@@ -1,0 +1,10 @@
+<input type="text" [value]="ival" />
+<button (click)="test()">check data pass</button>
+<br />
+<p *ngIf="isset; else ab">Value passed successfully!!</p>
+<ng-template #ab>Value not passed successfully!!</ng-template>
+<div *ngIf="isset">
+  <div class="row" *ngFor="let n of nums">
+    <p>{{ n }}</p>
+  </div>
+</div>
