@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-test',
@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
   @Input('gd') getdata = '';
+  @Output('ot') outdata = new EventEmitter<number[]>();
   val: string = '';
   isset: boolean = false;
   nums: number[] = [1, 2, 3, 4, 5];
@@ -19,5 +20,8 @@ export class TestComponent implements OnInit {
   oncheck() {
     this.val = this.getdata;
     //this.isset = this.ival != '';
+  }
+  passtoparent() {
+    this.outdata.emit(this.nums);
   }
 }
