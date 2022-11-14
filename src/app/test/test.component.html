@@ -1,6 +1,12 @@
 <!-- <p *ngIf="isset; else ab">Value passed successfully!!</p>
 <ng-template #ab>Value not passed successfully!!</ng-template> -->
 <div class="container">
+  <div [ngSwitch]="color" class="row">
+    <div *ngSwitchCase="'red'" class="row">This is red</div>
+    <div *ngSwitchCase="'blue'" class="row">This is blue</div>
+    <div *ngSwitchCase="'green'" class="row">This is green</div>
+  </div>
+
   <div class="row">
     <p>Getting value from Parent:</p>
     <p class="text-success">{{ val }}</p>
