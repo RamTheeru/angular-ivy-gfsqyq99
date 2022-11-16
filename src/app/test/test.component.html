@@ -1,6 +1,8 @@
 <!-- <p *ngIf="isset; else ab">Value passed successfully!!</p>
 <ng-template #ab>Value not passed successfully!!</ng-template> -->
 <div class="container">
+  <!-- <div>{{ num | addcurrency: 2 }}</div> -->
+  <p>{{ myclasses | json }}</p>
   <div [ngSwitch]="color" class="row">
     <div *ngSwitchCase="'red'" class="row">This is red</div>
     <div *ngSwitchCase="'blue'" class="row">This is blue</div>

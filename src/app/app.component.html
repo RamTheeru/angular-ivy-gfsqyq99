@@ -14,14 +14,20 @@
     </button>
   </div>
   <div class="row">
-    <p *ngIf="ispassed; else t" class="text-info">
+    <app-test [gd]="testval"></app-test>
+  </div>
+  <div class="row">
+    <button (click)="checkvalfromchild()" class="btn btn-primary">
+      check Value from child
+    </button>
+  </div>
+  <hello></hello>
+  <div class="row">
+    <!-- <p *ngIf="ispassed; else t" class="text-info">
       Data passing from parent to child.......
     </p>
     <ng-template #t>
       <p class="text-warning">Data not yet passed to child</p>
-    </ng-template>
-  </div>
-  <div class="row">
-    <app-test (ot)="checkvalfromchild($event)" [gd]="testval"></app-test>
+    </ng-template> -->
   </div>
 </div>
