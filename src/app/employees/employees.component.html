@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <h1><u>Employee List</u>:</h1>
+  </div>
+  <div *ngFor="let e of emps" class="row">
+    <div class="col">
+      {{ e.id }}
+    </div>
+    <div class="col">
+      {{ e.name }}
+    </div>
+    <div class="col">
+      {{ e.age }}
+    </div>
+    <div class="col">
+      <button (click)="passDetails(e)">GetDetails</button>
+    </div>
+  </div>
+</div>
+<app-employeedetail [ep]="employee"></app-employeedetail>
