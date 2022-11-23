@@ -11,7 +11,7 @@ export class EmployeeService {
     // 'https://github.com/RamTheeru/angular-ivy-gfsqyq99/blob/main/src/app/assets/emp.json';
     'https://raw.githubusercontent.com/RamTheeru/angular-ivy-gfsqyq99/main/src/app/assets/emp.json';
   //  '/assets/emp.json';
-  getemployees(): Observable<any[]> {
-    return this.http.get<any[]>(this.url);
+  getemployees(): Observable<Emp[]> {
+    return this.http.get<Emp[]>(this.url);
   }
 }
