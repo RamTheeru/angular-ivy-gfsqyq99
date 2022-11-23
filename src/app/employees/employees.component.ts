@@ -13,7 +13,18 @@ export class EmployeesComponent implements OnInit {
   constructor(private eS: EmployeeService) {}
 
   ngOnInit() {
-    this.eS.getemployees().subscribe((i) => (this.emps = i));
+    this.eS.getemployees().subscribe((i) => {
+      console.log('getting response');
+      if (i instanceof Emp) {
+        this.emps = i;
+      } else if (i.length > 0) {
+        this.emps = i;
+      } else {
+        alert(i);
+      }
+    });
+    console.log('finished');
+    console.log('finished2');
   }
   passDetails(e) {
     this.employee = e;
