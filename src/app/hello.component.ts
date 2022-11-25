@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { filter, Observable, Subscription } from 'rxjs';
 import { Service1Service } from './service1.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { Service1Service } from './service1.service';
 export class HelloComponent implements OnInit {
   @Input() name: string;
   constructor(private ss: Service1Service) {}
-
+  // Subsc: Subscription;
   ngOnInit() {
     let pro = new Promise((resolve) => {
       console.log('creating Promise....');
@@ -30,14 +30,19 @@ export class HelloComponent implements OnInit {
 
     let ob = new Observable((o) => {
       console.log('creating Observable....');
-      o.next('observable testing');
-      o.next('sayanna');
-      o.next('ram');
-      o.next('ravi');
+      setTimeout(() => {
+        o.next('observable testing');
+        o.next('sayanna');
+        o.next('ram');
+        o.next(200);
+      }, 4000);
     });
-    // ob.subscribe((i) => {
-    //   console.log('getting reposne from observable');
-    //   console.log(i);
-    // });
+    console.log('Subscription started');
+    let Subsc = ob.subscribe((i) => {
+      console.log('getting reposne from observable');
+      console.log(i);
+    });
+    console.log('all finished');
+    //Subsc.unsubscribe();
   }
 }
