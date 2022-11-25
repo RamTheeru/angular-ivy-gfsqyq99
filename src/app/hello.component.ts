@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Service1Service } from './service1.service';
 
 @Component({
@@ -11,16 +12,32 @@ export class HelloComponent implements OnInit {
   constructor(private ss: Service1Service) {}
 
   ngOnInit() {
-    let pro = new Promise((y) => {
-      y('promise testing...');
+    let pro = new Promise((resolve) => {
+      console.log('creating Promise....');
+      // resolve('promise testing...');
+      resolve('sayanna');
+      resolve('ram');
+      resolve('ravi');
     });
     // this.ss.getVal().subscribe((i) => {
     //   console.log('test');
     //   console.log(i);
     // });
-    pro.then((i) => {
-      console.log('getting reposne from promise');
-      console.log(i);
+    // pro.then((i) => {
+    //   console.log('getting reposne from promise');
+    //   console.log(i);
+    // });
+
+    let ob = new Observable((o) => {
+      console.log('creating Observable....');
+      o.next('observable testing');
+      o.next('sayanna');
+      o.next('ram');
+      o.next('ravi');
     });
+    // ob.subscribe((i) => {
+    //   console.log('getting reposne from observable');
+    //   console.log(i);
+    // });
   }
 }
