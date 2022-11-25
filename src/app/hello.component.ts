@@ -9,9 +9,17 @@ import { Service1Service } from './service1.service';
 export class HelloComponent implements OnInit {
   @Input() name: string;
   constructor(private ss: Service1Service) {}
+
   ngOnInit() {
-    this.ss.getVal().subscribe((i) => {
-      console.log('test');
+    let pro = new Promise((y) => {
+      y('promise testing...');
+    });
+    // this.ss.getVal().subscribe((i) => {
+    //   console.log('test');
+    //   console.log(i);
+    // });
+    pro.then((i) => {
+      console.log('getting reposne from promise');
       console.log(i);
     });
   }
